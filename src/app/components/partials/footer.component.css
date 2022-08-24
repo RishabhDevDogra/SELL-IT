@@ -1,0 +1,58 @@
+/*====Web screen width>1800px====*/
+footer {
+  background-color: #f2f2f2;
+}
+#footer_wrap {
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+}
+a {
+  font-size: 14px;
+}
+h6 {
+  font-weight: 700;
+}
+
+
+/*====Web screen width<1800px====*/
+@media (max-width: 1700px) and (min-width: 768px) {
+  #logo {
+    margin-left: -70px;
+    margin-top: 10px;
+    width: 170px;
+    height: 207px;
+  }
+}
+
+@media (max-width: 1250px) and (min-width: 768px) {
+  a {
+    font-size: 12px;
+  }
+  .logo {
+    margin-left: -70px;
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/*====Mobile screen====*/
+@media screen and (max-width: 767px) {
+  #logo {
+    margin-left: 0px;
+    width: 170px;
+    height: 207px;
+  }
+  .row {
+    text-align: center;
+  }
+  h6 {
+    padding-left: 0px;
+  }
+  #id {
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 30px;
+  }
+}

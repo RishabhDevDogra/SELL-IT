@@ -1,0 +1,71 @@
+
+  .container {
+    width: 200%;
+  }
+
+
+  h1{
+    margin-top:20px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 101%;
+    text-align: left;
+    color: black;
+    
+  }
+
+  .btn {
+    width: 110px;
+   
+  }
+
+  /* outline labels */
+
+  label {
+    font-size: 12px;
+    position: relative;
+    top: 17px;
+    background-color: white;
+    padding: 0 5px;
+    left: 9px;
+  }
+
+
+  /* ----------------- /
+  / Validation Styles /
+  / --------------- */
+
+  .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+  .form-group {
+    /* margin-top: 1.25rem; */
+    margin-bottom: 0;
+  }
+
+  .invalid-feedback {
+    position: absolute;
+  }
+  /* -------------- /
+  / tablet screen  /
+  / ------------ */
+@media only screen and (min-width:688px) and (max-width: 1198px){
+
+  .container {
+    width: 60%;
+  }
+
+}
+
+/* --------------/
+/ small screen /
+/ ------------*/
+
+

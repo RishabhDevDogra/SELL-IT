@@ -1,0 +1,86 @@
+<app-header [title]="title"></app-header>
+
+<!-- Content for the Add_Edit page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1>{{editing ? "Answer" : "Questioning"}} an Item</h1>
+
+            <form novalidate #form="ngForm" (ngSubmit)="question(form)">
+            <!-- <form class="form" method="POST"> -->
+                <div class="form-group">
+                    <input type="hidden"
+                        name="id"
+                        [(ngModel)]="comment._id"
+                    >
+
+                    <div *ngIf="editing" class="ask-question">
+                    <input  type= "hidden" class="form-control"
+                        id="commentTextField"
+                        placeholder="Enter the Commnet"
+                        name="comment" 
+                        [(ngModel)]="comment.comment"
+                        required>
+                    </div>
+
+                    <div *ngIf="!editing" class="ask-question">
+                        <label for="commentTextField">What is your Question?</label>
+                        <input type= "text" class="form-control"
+                        id="commentTextField"
+                        placeholder="Enter the Commnet"
+                        name="comment" 
+                        [(ngModel)]="comment.comment"
+                        required>
+                    </div>
+                <br/>
+                        <div *ngIf="!editing" class="choose-item">
+                            <label for="itemIdTextField">Choose the item that you want to ask question for</label>
+                        <select class="form-control"
+                        id="itemIdTextField"
+                        placeholder="Enter the item ID"
+                        name="itemid" 
+                        [(ngModel)]="comment.itemid">
+                        <option [ngValue]="item._id" *ngFor="let item of inventoryList">
+                            {{item.item}}
+                          </option>
+                        </select>
+                    </div>
+
+                    <div *ngIf="editing" class="ask-question">
+                        <label for="answerTextField">Answer to a question</label>
+                        <input type= "text" class="form-control"
+                        id="answerTextField"
+                        placeholder="Enter the Answer"
+                        name="answer" 
+                        [(ngModel)]="comment.answer"
+                        required>
+                    </div>
+                
+                <br/>
+
+
+            </div>
+            <br/>
+
+<button *ngIf="!editing" class="btn btn-primary" type="submit">
+    <i class="fas fa-edit"></i> 
+    Submit
+</button>
+
+                <button *ngIf="isowner" class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> 
+                    Submit
+                </button>
+                
+                <a routerLink="/inventory/list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> 
+                    Cancel
+                </a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<app-footer></app-footer>

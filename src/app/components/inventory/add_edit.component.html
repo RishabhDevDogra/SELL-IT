@@ -1,0 +1,87 @@
+<app-header [title]="title"></app-header>
+
+<!-- Content for the Add_Edit page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1>{{editing ? "Edit" : "Add a new"}} Product to Sell</h1>
+
+            <form novalidate #form="ngForm" (ngSubmit)="save(form)">
+            <!-- <form class="form" method="POST"> -->
+                <div class="form-group">
+                    <input type="hidden"
+                        name="id"
+                        [(ngModel)]="item._id"
+                    >
+                    <label for="itemTextField">Product Name</label>
+                    <input type="text" class="form-control"
+                        id="itemTextField"
+                        placeholder="Enter the Item Name"
+                        name="item" 
+                        [(ngModel)]="item.item"
+                        required>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="QtyTextField">Product Condition</label>
+                    <input type="text" class="form-control"
+                    id="QtyTextField"
+                    placeholder="How is the condition?"
+                    name="condition" 
+                    [(ngModel)]="item.condition"
+                    required>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="statusTextField">Color</label>
+                    <input type="text" class="form-control"
+                    id="statusTextField"
+                    placeholder="Enter a color"
+                    name="color" 
+                    [(ngModel)]="item.color"
+                    >
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="informationTextField">Information</label>
+                    <input type="text" class="form-control"
+                    id="informationTextField"
+                    placeholder="Additional Information?"
+                    name="information" 
+                    [(ngModel)]="item.information"
+                    >
+                </div>
+             
+              
+                <br />
+                <br/>
+                <label for="startDate">Start Time</label>
+                <input [ngModel]="item.date | date:'yyyy-MM-dd'" 
+                (ngModelChange)="item.date = $event" type="date" name="startDate"/>
+
+                <label for="endDate">End Time</label>
+                <input [ngModel]="item.date | date:'yyyy-MM-dd'" 
+                (ngModelChange)="item.enddate = $event" type="date" name="endDate"/>
+
+                <button *ngIf="isowner" class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> 
+                    Submit
+                </button>
+
+                <button *ngIf="!editing" class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> 
+                    Submit
+                </button>
+                
+                <a routerLink="/inventory/list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> 
+                    Cancel
+                </a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<app-footer></app-footer>

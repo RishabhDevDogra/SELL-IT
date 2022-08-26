@@ -1,24 +1,21 @@
-<!-- <%- include ../partials/header.ejs %> -->
+
 <app-header [title]="title"></app-header>
 
   <!-- Main Content -->
   <main class="container">
     <div class="row">
-        <!-- <h1><%= title %></h1> -->
+        
         <h1>{{ title }}</h1>
         <br>
         <div>
-            <!-- <a href="/inventory/add" class="btn btn-primary align-self-end" role="button">
-                <i class="fas fa-plus-circle"></i> 
-                Add a new Item
-            </a>                 -->
+            
             <a routerLink="/inventory/add" class="btn btn-primary align-self-end" role="button">
                 <i class="fas fa-plus-circle"></i> 
-                Add a new Product to sell
+                Add a new Product to sell 
             </a> 
         </div>
 
-        <div class="table-responsive">
+        <div id="table" class="table-responsive" style="padding:20px ;">
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
                 <tr>
@@ -33,10 +30,7 @@
                     <th class="text-center" colspan="1">Ask a question</th>
                 </tr>
 
-                <!-- Repeatable Template Row -->
-
-                <!-- <% for(let count = 0; count < InventoryList.length; count++) { %> -->
-                    <!-- <tr> -->
+                
                     <tr *ngFor="let item of inventoryList">
                         <td class="text-center"> {{ item.item }} </td>
                         <td class="text-center"> {{ item.condition }} </td>
@@ -46,23 +40,16 @@
                         <td class="text-center">{{ item.enddate | date }}</td>
                         <td class="text-center">{{ item.ownername }}</td>
 
-                        <!-- <td class="text-center">
-                            <button class="btn bg-primary btn-primary btn-sm">
-                                <i class="fas fa-pencil-alt" ></i></button>
-                        </td>
-                        <td class="text-center">
-                            <a class="btn bg-danger btn-danger btn-sm">
-                                <i class="fas fa-trash-alt"></i></a>
-                        </td> -->
+                        
                         <td class="text-center">
                             <button [routerLink]="['/inventory/edit/', item._id]" class="btn bg-primary btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt" ></i></button>
                         </td>
-                        <td class="text-center">
+                        <td  id="question"class="text-center">
                             <button [routerLink]="['/question/add/', item._id]" class="btn bg-primary btn-primary btn-sm">
-                                <i class="fas fa-pencil-alt" ></i></button>
+                                <i class="fas fa-paper-plane" ></i></button>
                     </tr> 
-                <!-- <% } %> -->
+                
             </table>
         </div>
 
@@ -80,22 +67,14 @@
 
                 <!-- Repeatable Template Row -->
 
-                <!-- <% for(let count = 0; count < InventoryList.length; count++) { %> -->
-                    <!-- <tr> -->
+               
                     <tr *ngFor="let comment of questionList">
                         <td class="text-center"> {{ comment.item }} </td>
                         <td class="text-center"> {{ comment.comment }} </td>
                         <td class="text-center"> {{ comment.created | date:'medium' }} </td>
                         <td class="text-center"> {{ comment.ownername }} </td>
                         <td class="text-center"> {{ comment.answer }} </td>
-                        <!-- <td class="text-center">
-                            <button class="btn bg-primary btn-primary btn-sm">
-                                <i class="fas fa-pencil-alt" ></i></button>
-                        </td>
-                        <td class="text-center">
-                            <a class="btn bg-danger btn-danger btn-sm">
-                                <i class="fas fa-trash-alt"></i></a>
-                        </td> -->
+                        
                         <td class="text-center">
                             <button [routerLink]="['/question/edit/', comment._id]" class="btn bg-primary btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt" ></i></button>

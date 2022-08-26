@@ -8,7 +8,8 @@ import { Question } from "../../models/question.model";
 
 @Component({
     selector: "list-inventory",
-    templateUrl: "list.component.html"
+    templateUrl: "list.component.html",
+    styleUrls: ['./list.component.css']
 })
 
 export class ListComponent {

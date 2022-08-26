@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 html {
   position: relative;
   min-height: 100%;
@@ -17,6 +18,15 @@ body {
 }
 .flash{
   color: red;
+}
+html, body {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+.modal {
+  width: 50vw;
+  height: 50vh;
+  height: calc(var(--vh, 1vh) * 50);
 }
 
 html, body { height: 100%; }

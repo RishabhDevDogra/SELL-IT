@@ -8,7 +8,9 @@ import { AuthService } from 'src/app/models/auth.service';
 
 @Component({
     selector: "add-edit",
-    templateUrl: "add_edit.component.html"
+    templateUrl: "add_edit.component.html",
+    styleUrls: ['./add_edit.component.css']
+ 
 })
 
 export class AddEditComponent {

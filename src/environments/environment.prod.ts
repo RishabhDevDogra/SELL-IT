@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiurl: "https://comp229teamfixitbackend.herokuapp.com/"
+  apiurl: "https://sell-it-website.herokuapp.com/"
 };
